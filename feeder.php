@@ -19,7 +19,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2016 PrestaShop SA
+*  @copyright  2007-2017 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
@@ -30,15 +30,11 @@ if (!defined('_PS_VERSION_'))
 class Feeder extends Module
 {
 	private $_postErrors = array();
-	//new
+	
 	public function __construct()
 	{
 		$this->name = 'feeder';
-
-
-
 		$this->tab = 'front_office_features';
-		$this->name = 'feeder';
 		$this->version = '0.7.2';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
@@ -46,6 +42,7 @@ class Feeder extends Module
 		$this->_directory = dirname(__FILE__).'/../../';
 		parent::__construct();
 		
+		$this->displayName = $this->l('RSS products feed');
 		$this->description = $this->l('Generate a RSS feed for your latest products.');
 	}
 	
@@ -56,14 +53,14 @@ class Feeder extends Module
 	
 	function hookHeader($params)
 	{
+		if (!($id_category = (int)Tools::getValue('id_category')))
 		{
 			if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], Tools::getHttpHost()) && preg_match('!^(.*)\/([0-9]+)\-(.*[^\.])|(.*)id_category=([0-9]+)(.*)$!', $_SERVER['HTTP_REFERER'], $regs))
 			{
-
+				if (isset($regs[2]) && is_numeric($regs[2]))
 					$id_category = (int)($regs[2]);
 				elseif (isset($regs[5]) && is_numeric($regs[5]))
 					$id_category = (int)$regs[5];
-				if (isset($regs[2]) && is_numeric($regs[2]))
 			}
 			elseif ($id_product = (int)Tools::getValue('id_product'))
 			{
