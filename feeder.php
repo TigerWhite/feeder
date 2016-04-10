@@ -56,7 +56,6 @@ class Feeder extends Module
 	
 	function hookHeader($params)
 	{
-		if (!($id_category = (int)Tools::getValue('id_category')))
 		{
 			if (isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], Tools::getHttpHost()) && preg_match('!^(.*)\/([0-9]+)\-(.*[^\.])|(.*)id_category=([0-9]+)(.*)$!', $_SERVER['HTTP_REFERER'], $regs))
 			{
