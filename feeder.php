@@ -30,7 +30,7 @@ if (!defined('_PS_VERSION_'))
 class Feeder extends Module
 {
 	private $_postErrors = array();
-	
+	//new
 	public function __construct()
 	{
 		$this->name = 'feeder';
