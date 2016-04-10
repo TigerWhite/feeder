@@ -37,6 +37,7 @@ class Feeder extends Module
 		$this->tab = 'front_office_features';
 		$this->version = '0.7.2';
 		$this->author = 'PrestaShop';
+		$this->ass = 'sadf';
 		$this->need_instance = 0;
 		
 		$this->_directory = dirname(__FILE__).'/../../';
