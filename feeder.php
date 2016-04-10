@@ -46,7 +46,6 @@ class Feeder extends Module
 		$this->_directory = dirname(__FILE__).'/../../';
 		parent::__construct();
 		
-		$this->displayName = $this->l('RSS products feed');
 		$this->description = $this->l('Generate a RSS feed for your latest products.');
 	}
 	
