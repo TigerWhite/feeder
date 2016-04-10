@@ -34,6 +34,9 @@ class Feeder extends Module
 	public function __construct()
 	{
 		$this->name = 'feeder';
+
+
+		
 		$this->tab = 'front_office_features';
 		$this->name = 'feeder';
 		$this->version = '0.7.2';
