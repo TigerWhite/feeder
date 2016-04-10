@@ -30,12 +30,12 @@ if (!defined('_PS_VERSION_'))
 class Feeder extends Module
 {
 	private $_postErrors = array();
-	
+	//This constructor
 	public function __construct()
 	{
 		$this->name = 'feeder';
 		$this->tab = 'front_office_features';
-		$this->version = '0.7.2';
+		$this->version = '0.7.3';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
 		
