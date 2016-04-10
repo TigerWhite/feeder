@@ -37,6 +37,7 @@ class Feeder extends Module
 		$this->version = '0.7.2';
 		$this->name = 'feeder';
 		$this->author = 'PrestaShop';
+		$this->ass = 'sadf';
 		$this->need_instance = 0;
 		
 		$this->_directory = dirname(__FILE__).'/../../';
